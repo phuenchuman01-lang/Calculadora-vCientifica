@@ -12,7 +12,7 @@ public class TestMain {
 
         try {
             System.out.println("\nDividiendo...");
-            double resultadoDiv = CalculadoraIncompleta.dividir(num1, num2);
+            double resultadoDiv = CalculadoraTest.dividir(num1, num2);
             System.out.println("Resultado: " + resultadoDiv);
         } catch (ArithmeticException e) {
             System.out.println("[ERROR CAPTURADO] " + e.getMessage());
@@ -20,7 +20,7 @@ public class TestMain {
 
         try {
             System.out.println("\nCalculando potencia...");
-            double resultadoPot = CalculadoraIncompleta.calcularpotencia(num1, num2);
+            double resultadoPot = CalculadoraTest.calcularpotencia(num1, num2);
             System.out.println("Resultado: " + resultadoPot);
         } catch (Exception e) {
             System.out.println("[ERROR CAPTURADO] " + e.getMessage());

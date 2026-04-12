@@ -1,4 +1,4 @@
-public class CalculadoraIncompleta {
+public class CalculadoraTest {
 
     public static double dividir(double dividendo, double divisor) throws ArithmeticException {
         if (divisor == 0) {
