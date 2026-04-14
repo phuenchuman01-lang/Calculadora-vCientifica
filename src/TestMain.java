@@ -10,6 +10,8 @@ public class TestMain {
         double num1 = EntradaDatos.pedirnumero(sc, "Ingresa el primer número: ");
         double num2 = EntradaDatos.pedirnumero(sc, "Ingresa el segundo número: ");
 
+        CalculadoraBasica CalculadoraTest = new CalculadoraBasica();
+
         try {
             System.out.println("\nDividiendo...");
             double resultadoDiv = CalculadoraTest.dividir(num1, num2);
@@ -20,7 +22,7 @@ public class TestMain {
 
         try {
             System.out.println("\nCalculando potencia...");
-            double resultadoPot = CalculadoraTest.calcularpotencia(num1, num2);
+            double resultadoPot = CalculadoraTest.potencia(num1, num2);
             System.out.println("Resultado: " + resultadoPot);
         } catch (Exception e) {
             System.out.println("[ERROR CAPTURADO] " + e.getMessage());
