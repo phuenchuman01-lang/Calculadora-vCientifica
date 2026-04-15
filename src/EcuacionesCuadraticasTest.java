@@ -1,4 +1,4 @@
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Test;                    //Test de las ecuaciones cuadraticas con Junit
 import static org.junit.jupiter.api.Assertions.*;
 
 class EcuacionCuadraticaTest {
