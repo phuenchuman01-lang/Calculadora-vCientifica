@@ -23,7 +23,7 @@ class CalculadoraBasicaTest {
     }
 
     @Test
-    void testPotencia() {
+    void testPotencia() throws Exception {
         assertEquals(8, calc.potencia(2, 3));    // Test 1: 2 al cubo
         assertEquals(1, calc.potencia(100, 0));  // Test 2: Todo num a la 0 es 1
     }
