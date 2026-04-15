@@ -5,10 +5,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int opcion = 0;
 
-        // Instanciamos la calculadora de Katherine y Luis una sola vez
         CalculadoraBasica calc = new CalculadoraBasica();
 
-        // Bucle principal del menú
         do {
             System.out.println("\n--- Calculadora Científica ---");
             System.out.println("Seleccione una opción:");
@@ -22,23 +20,20 @@ public class Main {
 
             if (scanner.hasNextInt()) {
                 opcion = scanner.nextInt();
-                scanner.nextLine(); // Limpiar el buffer
+                scanner.nextLine();
 
                 switch (opcion) {
                     case 1:
                         System.out.println("\n>> --- Operaciones Aritméticas ---");
-                        // Usamos la clase EntradaDatos que vimos en el TestMain de Luis
                         double num1 = EntradaDatos.pedirnumero(scanner, "Ingresa el primer número: ");
                         double num2 = EntradaDatos.pedirnumero(scanner, "Ingresa el segundo número: ");
 
-                        // Llamamos a los métodos simples de Katherine
                         System.out.println("Suma: " + calc.sumar(num1, num2));
                         System.out.println("Resta: " + calc.restar(num1, num2));
                         System.out.println("Multiplicación: " + calc.multiplicar(num1, num2));
                         System.out.println("Mayor: " + calc.mayor(num1, num2));
                         System.out.println("Menor: " + calc.menor(num1, num2));
 
-                        // Llamamos a los métodos con validación de Luis usando try-catch
                         try {
                             System.out.println("División: " + calc.dividir(num1, num2));
                         } catch (ArithmeticException e) {
@@ -53,9 +48,15 @@ public class Main {
                         break;
 
                     case 2:
-                        System.out.println("\n>> Iniciando Ecuación cuadrática...");
-                        System.out.println("Funcionalidad en desarrollo...");
-                        // Aquí iría: EcuacionCuadratica ec = new EcuacionCuadratica(); etc...
+                        System.out.println("\n>> --- Ecuación Cuadrática ---");
+                        System.out.println("Resolviendo formato: Ax^2 + Bx + C = 0");
+
+                        double a = EntradaDatos.pedirnumero(scanner, "Ingresa el valor de A: ");
+                        double b = EntradaDatos.pedirnumero(scanner, "Ingresa el valor de B: ");
+                        double c = EntradaDatos.pedirnumero(scanner, "Ingresa el valor de C: ");
+                        EcuacionCuadratica ec = new EcuacionCuadratica();
+                        ec.calcularRaices(a, b, c);
+
                         break;
 
                     case 3:
@@ -82,7 +83,7 @@ public class Main {
                 }
             } else {
                 System.out.println("\nError: Debe ingresar un número válido para el menú.");
-                scanner.next(); // Limpiar la entrada incorrecta
+                scanner.next();
             }
 
         } while (opcion != 6);
