@@ -6,9 +6,10 @@ public class CalculadoraBasica {
 
     public double multiplicar(double a, double b) { return a * b; }
 
-    public double dividir(double a, double b) throws ArithmeticException {
+    public double dividir(double a, double b) {
         if (b == 0) {
-            throw new ArithmeticException("Error aritmetico : No es posible dividir por 0.");
+            System.out.println("Error: División por cero");
+            return 0; // O lanzar una excepción
         }
         return a / b;
     }
