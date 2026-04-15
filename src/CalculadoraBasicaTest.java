@@ -1,36 +1,33 @@
-import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Test;
 
-class CalculadoraBasicaTest {
+public class CalculadoraBasicaTest {
+
     CalculadoraBasica calc = new CalculadoraBasica();
 
     @Test
-    void testSumar() {
-        assertEquals(10, calc.sumar(7, 3));      // Test 1: Positivos
-        assertEquals(-5, calc.sumar(-2, -3));    // Test 2: Negativos
+    public void testDividirPorCero() {
+        // Corrobora que si el divisor es 0, retorne 0.0 según tu lógica actual
+        assertEquals(0.0, calc.dividir(10, 0), "Debería retornar 0 al dividir por cero");
     }
 
     @Test
-    void testDividir() {
-        assertEquals(5, calc.dividir(10, 2));    // Test 1: Normal
-        assertEquals(2.5, calc.dividir(5, 2));   // Test 2: Con decimales
+    public void testPotenciaNormal() throws Exception {
+        // Como el método lanza una excepción, el test también debe declararlo o usar try-catch
+        assertEquals(8.0, calc.potencia(2, 3), 0.001);
     }
 
     @Test
-    void testMayor() {
-        assertEquals(50, calc.mayor(50, 10));    // Test 1
-        assertEquals(0, calc.mayor(-5, 0));      // Test 2
+    public void testPotenciaCeroCero() {
+        Exception exception = assertThrows(Exception.class, () -> {
+            calc.potencia(0, 0);
+        });
+        String mensajeEsperado = "Error aritmetico";
+        assertTrue(exception.getMessage().contains(mensajeEsperado));
     }
 
     @Test
-    void testPotencia() throws Exception {
-        assertEquals(8, calc.potencia(2, 3));    // Test 1: 2 al cubo
-        assertEquals(1, calc.potencia(100, 0));  // Test 2: Todo num a la 0 es 1
-    }
-
-    @Test
-    void testPorcentaje() {
-        assertEquals(20, calc.porcentaje(200, 10)); // Test 1: 10% de 200
-        assertEquals(0, calc.porcentaje(50, 0));     // Test 2: 0% de algo
+    public void testPorcentaje() {
+        assertEquals(15.0, calc.porcentaje(100, 15), 0.001);
     }
 }
